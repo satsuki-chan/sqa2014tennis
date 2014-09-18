@@ -6,7 +6,8 @@ python:
 install: "pip install -r requirements.txt"
 #install: "pip-3.3 install -r requirements.txt"
 before_script:
-  - "flake8 --ignore=F403 app tests "
+#  - "flake8 --ignore=F403 app tests "
+  - "flake8 --ignore=F403 tests "
 #  - coverage erase
 # command to run tests
 script:
