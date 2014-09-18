@@ -3,7 +3,7 @@ Feature: As a player
          
 Scenario: Straight Sets (corridas)
 	  Given: "Alice" and "Bob" start a match to "5" sets
-	  Then: I see score: "Alice plays with Bob] | 0-0"
+	  Then: I see score: "Alice plays with Bob | 0-0"
 
 Scenario: First player wins straight
 	  Given: "Mary" and "Sally" start a match to "3" sets
