@@ -5,8 +5,8 @@ class Match:
         self.p2 = player2
         self.pacted_sets = pacted_sets
         self.current_set = 0
-        self.p1_scores = [0]
-        self.p2_scores = [0]
+        self.p1_scores = [int(0)]
+        self.p2_scores = [int(0)]
 
     def display_score(self):
         scores = ""
@@ -60,7 +60,6 @@ class Match:
             
             self.p1_scores[self.current_set] = score_p1
             self.p2_scores[self.current_set] = score_p2
-    
                 
         return self
     

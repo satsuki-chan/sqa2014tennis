@@ -63,10 +63,10 @@ def when_player_won_the_1st_set(step, player, game_set, p1_score, p2_score):
 def and_player_won_the_set(step, player, game_set, p1_score, p2_score):
     #assert False, 'This step must be implemented'
     if int(game_set[0]) <= world.sets:
-        if (world.current_set + 1) <= int(game_set[0]):
-            world.current_set += 1
-            world.p1_scores.append(0)
-            world.p2_scores.append(0)
+        #if (world.current_set + 1) <= int(game_set[0]):
+        world.current_set += 1
+        world.p1_scores.append(0)
+        world.p2_scores.append(0)
             
         if world.p1 == player:
             world.p1_scores[world.current_set] = int(p1_score)
