@@ -12,7 +12,7 @@ class Match:
         scores = ""
         index = 0
         while index <= self.current_set:
-            scores = "".join(", {0}-{1}".format(self.p1_scores[index], self.p2_scores[index]))
+            scores += "".join(", {0}-{1}".format(self.p1_scores[index], self.p2_scores[index]))
             index += 1
         
         total_score1 = 0
@@ -23,10 +23,11 @@ class Match:
         
         if self.current_set == 0 and self.p1_scores[self.current_set] < 3 and self.p2_scores[self.current_set] < 3:
             current_score = "{0} plays with {1} | {2}".format(self.p1, self.p2, scores[2:])
-        elif total_score2 > total_score1:
+        elif total_score2 >= total_score1:
+            scores = ""
             index = 0
             while index <= self.current_set:
-                scores = "".join(", {1}-{0}".format(self.p1_scores[index], self.p2_scores[index]))
+                scores += "".join(", {1}-{0}".format(self.p1_scores[index], self.p2_scores[index]))
                 index += 1
 
             current_score = "{1} defeated {0} | {2}".format(self.p1, self.p2, scores[2:])
@@ -54,6 +55,7 @@ class Match:
         if (self.current_set + 1) <= self.pacted_sets:
             test_winner = abs(self.p1_scores[self.current_set] - self.p2_scores[self.current_set])
             if (self.p1_scores[self.current_set] >= 4 or self.p2_scores[self.current_set] >= 4) and test_winner >= 2:
+            #if self.p1_scores[self.current_set] >= 4 or self.p2_scores[self.current_set] >= 4:
                 self.current_set += 1
                 self.p1_scores.append(0)
                 self.p2_scores.append(0)
