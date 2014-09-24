@@ -2,6 +2,7 @@
 import app.match as m
 from lettuce import *
 
+
 @step(u'Given: "([^"]*)" and "([^"]*)" start a match to "([^"]*)" sets')
 def given_player1_and_player2_start_a_match_to_pacted_sets(step, player1, player2, pacted_sets):
     world.match = m.Match(player1, player2, int(pacted_sets))
@@ -11,6 +12,7 @@ def given_player1_and_player2_start_a_match_to_pacted_sets(step, player1, player
     world.current_set = 0
     world.p1_scores = [0]
     world.p2_scores = [0]
+
 
 @step(u'When: "([^"]*)" and "([^"]*)" start a match to "([^"]*)" sets')
 def when_player1_and_player2_start_a_match_to_pacted_sets(step, player1, player2, pacted_sets):
@@ -22,6 +24,7 @@ def when_player1_and_player2_start_a_match_to_pacted_sets(step, player1, player2
 def then_i_see_score(step, expected_score):
     assert expected_score == world.match.display_score(), \
         world.match.display_score()
+
 
 @step(u'When: "([^"]*)" won the "([^"]*)" set "([^"]*)"-"([^"]*)"')
 def when_player_won_the_1st_set(step, player, game_set, p1_score, p2_score):
