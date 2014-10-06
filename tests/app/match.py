@@ -35,20 +35,20 @@ class Match:
 
         return current_score
 
-    def player_scores(self, scoring_player):
-        if (self.current_set + 1) <= self.pacted_sets:
-            test_winner = abs(self.p1_scores[self.current_set] - self.p2_scores[self.current_set])
-            if (self.p1_scores[self.current_set] >= 4 or self.p2_scores[self.current_set] >= 4) and test_winner >= 2:
-                self.current_set += 1
-                self.p1_scores.append(0)
-                self.p2_scores.append(0)
-
-            if 1 == scoring_player:
-                self.p1_scores[self.current_set] += 1
-            elif 2 == scoring_player:
-                self.p2_scores[self.current_set] += 1
-
-        return self
+#    def player_scores(self, scoring_player):
+#        if (self.current_set + 1) <= self.pacted_sets:
+#            test_winner = abs(self.p1_scores[self.current_set] - self.p2_scores[self.current_set])
+#            if (self.p1_scores[self.current_set] >= 4 or self.p2_scores[self.current_set] >= 4) and test_winner >= 2:
+#                self.current_set += 1
+#                self.p1_scores.append(0)
+#                self.p2_scores.append(0)
+#
+#            if 1 == scoring_player:
+#                self.p1_scores[self.current_set] += 1
+#            elif 2 == scoring_player:
+#                self.p2_scores[self.current_set] += 1
+#
+#        return self
 
     def set_scores(self, score_p1, score_p2):
         if (self.current_set + 1) <= self.pacted_sets:

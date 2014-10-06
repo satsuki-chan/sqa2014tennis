@@ -9,11 +9,14 @@ before_script:
 #  - "flake8 --ignore=F403 tests "
   - "flake8 --ignore=E501,F403 tests"
   - coverage erase
+  - cd tests
 # command to run tests
 script:
-  - lettuce tests
+#  - lettuce tests
+  - lettuce
 #  - coverage run
-  - coverage run --omit='*lettuce*,*fuzzywuzzy*' tests/features/steps.py
+#  - coverage run --omit='*lettuce*,*fuzzywuzzy*' tests/features/steps.py
+  - coverage run --omit='*lettuce*,*fuzzywuzzy*' features/steps.py
   - coverage report -m
-  - nosetests --with-doctest --with-coverage -s tests/app
+  - nosetests --with-doctest --with-coverage -s app
 
